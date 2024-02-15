@@ -1,0 +1,31 @@
+# Ignore Visual Studio files
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.pidb
+*.log
+*.vspscc
+obj/
+bin/
+
+# Ignore NuGet packages
+packages/
+
+# Ignore build output
+[Bb]uild/
+
+# Ignore Resharper files
+_ReSharper*/
+
+# Ignore generated files
+*.cache
+*.tgz
+*.zip
+*.rar
+*.gz
+
+# Ignore Windows folder file attributes
+Desktop.ini
+Thumbs.db
