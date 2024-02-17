@@ -1,20 +1,23 @@
 ﻿using System;
-using System.Diagnostics;
 using System.IO;
 using System.Windows;
-using Microsoft.Win32;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using Microsoft.WindowsAPICodePack.Dialogs;
 
+namespace RemovePdfTitle;
+
 class Program
 {
+    protected Program() { }
     [STAThread]
-    static void Main(string[] args)
+    static void Main()
     {
-        CommonOpenFileDialog commonOpenFileDialog = new CommonOpenFileDialog();
-        commonOpenFileDialog.Title = "Wählen Sie einen Ordner mit Ihren PDF-Dateien aus";
-        commonOpenFileDialog.IsFolderPicker = true;
+        CommonOpenFileDialog commonOpenFileDialog = new()
+        {
+            Title = "Wählen Sie einen Ordner mit Ihren PDF-Dateien aus",
+            IsFolderPicker = true
+        };
         if (commonOpenFileDialog.ShowDialog() == CommonFileDialogResult.Ok)
         {
             foreach (string filePath in commonOpenFileDialog.FileNames)
